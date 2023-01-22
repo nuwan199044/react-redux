@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect, Connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { selectPost } from "../actions/postAction";
 
 class PostList extends Component {
 
   createListItems() {
     return this.props.allPosts.map((post) => {
-       return <li key={post.id}>{post.title} - {post.content}</li>
+       return <li onClick={() => this.props.selectPost(post)} key={post.id}>{post.title} - {post.content}</li>
     })
   }
 
@@ -23,4 +25,8 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(PostList);
+function matchDispatcherToProps(dispatch) {
+    return bindActionCreators({selectPost: selectPost},dispatch)
+}
+
+export default connect(mapStateToProps, matchDispatcherToProps)(PostList);

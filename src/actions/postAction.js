@@ -1,4 +1,4 @@
-import { FETCH_BUTTON_CLICKED } from "./types";
+import { FETCH_BUTTON_CLICKED, SELECT_POST } from "./types";
 
 export const fetchPosts = () => {
   return {
@@ -83,3 +83,10 @@ export const fetchPosts = () => {
     ],
   };
 };
+
+export const selectPost = (post) => {
+    return {
+        type: SELECT_POST,
+        payload: post
+    }
+}
