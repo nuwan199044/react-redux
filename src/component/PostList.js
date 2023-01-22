@@ -7,7 +7,7 @@ class PostList extends Component {
 
   createListItems() {
     return this.props.allPosts.map((post) => {
-       return <li onClick={() => this.props.selectPost(post)} key={post.id}>{post.title} - {post.content}</li>
+       return <li onClick={() => this.props.selectPost(post)} key={post.id}>{post.title} - {post.body}</li>
     })
   }
 

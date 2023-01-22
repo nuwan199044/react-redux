@@ -10,7 +10,7 @@ class SelectedPost extends Component {
       <div>
         <h4>ID - {this.props.selectedPost.id}</h4>
         <h4>Title - {this.props.selectedPost.title}</h4>
-        <h4>Content - {this.props.selectedPost.content}</h4>
+        <h4>Content - {this.props.selectedPost.body}</h4>
       </div>
     );
   }
